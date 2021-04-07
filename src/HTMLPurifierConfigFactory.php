@@ -28,12 +28,13 @@ class HTMLPurifierConfigFactory
         array $parents = [],
         array $attributes = [],
         array $elements = [],
-        array $blankElements = []
+        array $blankElements = [],
+        string $configClass = \HTMLPurifier_Config::class
     ): \HTMLPurifier_Config {
         if ($defaultConfig) {
-            $config = \HTMLPurifier_Config::inherit($defaultConfig);
+            $config = $configClass::inherit($defaultConfig);
         } else {
-            $config = \HTMLPurifier_Config::createDefault();
+            $config = $configClass::createDefault();
         }
 
         foreach ($parents as $parent) {

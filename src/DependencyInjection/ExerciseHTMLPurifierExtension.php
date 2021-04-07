@@ -54,6 +54,7 @@ class ExerciseHTMLPurifierExtension extends Extension
                     self::getResolvedConfig('attributes', $parents, $definition),
                     self::getResolvedConfig('elements', $parents, $definition),
                     self::getResolvedConfig('blank_elements', $parents, $definition),
+                    $definition['config_class'],
                 ])
             ;
 
